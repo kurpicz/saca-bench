@@ -1,0 +1,86 @@
+# --------------
+# Initialization
+# --------------
+
+AC_INIT(KBS bucket-pointer refinement, 2.0.0, Klaus-Bernd.Schuermann@CeBiTec.Uni-Bielefeld.DE, kbs-bpr)
+AC_CONFIG_SRCDIR(src/Standard/kbs_String.h)
+AM_CONFIG_HEADER(src/config.h)
+AC_CONFIG_AUX_DIR(config)
+
+
+
+AM_INIT_AUTOMAKE
+
+# -------
+# Options
+# -------
+
+
+DATE=`date +%Y-%m-%d`
+AC_SUBST(DATE)
+
+# ------
+# Checks
+# ------
+AC_ISC_POSIX
+AC_PROG_CC
+AC_EXEEXT
+
+AC_LANG_C
+
+AC_PROG_INSTALL
+#AC_PROG_RANLIB
+
+AC_DISABLE_SHARED
+#AC_DISABLE_STATIC
+AC_PROG_LIBTOOL
+#AM_PROG_LIBTOOL
+
+CC=gcc
+
+#for optimal running time
+CFLAGS="-O3 -fomit-frame-pointer -funroll-loops -fprefetch-loop-arrays -W -Winline -Wall"
+
+#for optimal running time on 64-bit machine
+#CFLAGS="-mptr64 -m64 -O3 -fomit-frame-pointer -funroll-loops -fprefetch-loop-arrays -W -Wall -Winline"
+
+#for debugging
+#CFLAGS="-g"
+
+# --------------------
+# Verbose version info
+# --------------------
+VERSION_INFO=`cat <<EOF
+Configuration\n\
+  Host type           : ${host_alias}\n\
+  Special build flags : ${kbs_flags}\n\
+  C   compiler        : ${CC}\n\
+  C   compiler flags  : ${CFLAGS}\n\
+  C++ compiler        : ${CXX} ${CXX_VERSION}\n\
+  C++ compiler flags  : ${CXXFLAGS}\n\
+  Linker flags        : ${LDFLAGS}\n
+`
+
+AC_SUBST(VERSION_INFO)
+
+
+# ------
+# Output
+# ------
+
+AC_OUTPUT( \
+	Makefile \
+	src/Makefile \
+	src/Extern/Makefile \
+	src/Standard/Makefile \
+	src/Util/Makefile \
+	src/SuffixArray/Makefile \
+	src/Main/Makefile \
+)
+
+# -----------------
+# Show version info
+# -----------------
+echo
+printf "$VERSION_INFO"
+echo

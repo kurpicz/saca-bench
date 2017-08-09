@@ -1,0 +1,42 @@
+[Breakpoint 0]
+Enabled=true
+File=bprtime.main.c
+Line=105
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=kbs_SuffixArrayConstDStepAndPre.c
+Line=181
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=kbs_SuffixArrayConstDStepAndPre.c
+Line=164
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=kbs_SuffixArrayConstDStepAndPre.c
+Line=982
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=bprtime.main.c
+Line=110
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+DriverName=GDB
+FileVersion=1
+OptionsSelected=
+ProgramArgs=/home/klaus/Development/bprTernary_auto/src/Main/testfib
+TTYLevel=7
+WorkingDirectory=/home/klaus/Development/bpr_auto/src/Main
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0

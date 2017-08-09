@@ -1,0 +1,10 @@
+libstandard_la-kbs_Math.lo: kbs_Math.c /usr/include/stdc-predef.h \
+ kbs_Math.h kbs_Error.h kbs_Types.h
+
+/usr/include/stdc-predef.h:
+
+kbs_Math.h:
+
+kbs_Error.h:
+
+kbs_Types.h:

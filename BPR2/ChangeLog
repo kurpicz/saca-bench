@@ -1,0 +1,7 @@
+Mapping of sequences without using modulo operation.
+
+10/15/2006: Suffixes later determined by copy not written to suffix array during bucketing.
+
+12/20/2006: New version with update of bucket for pivots in partitioning scheme.
+
+11/01/2007: Release bpr2 with new partitioning scheme (see my PhD thesis).

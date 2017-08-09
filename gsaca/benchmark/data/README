@@ -1,0 +1,3 @@
+To set up any corpus, just go to the directory and execute make.
+Required Programs: curl, zip, gzip, bzip2
+Downloads were last visited on 8.10.2015

@@ -1,0 +1,22 @@
+[Breakpoint 0]
+Enabled=true
+File=kbs_ClusteredSftConst.c
+Line=248
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=kbs_ClusteredSftConst.c
+Line=300
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+FileVersion=1
+ProgramArgs=makeclusteredsft 2
+TTYLevel=7
+WorkingDirectory=
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0

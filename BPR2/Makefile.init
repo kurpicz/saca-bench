@@ -1,0 +1,18 @@
+config_dir = config
+acinclude_files = kbs.m4 libtool.m4
+
+all:		acinclude autoconfig
+
+acinclude:
+		@echo "Generating acinclude.m4"
+		cd $(config_dir) ; \
+		cat $(acinclude_files) > ../acinclude.m4
+
+
+autoconfig:
+		libtoolize --force --copy
+		aclocal
+		autoheader
+		automake --add-missing --copy --include-deps --gnu
+		autoconf
+		@echo "Package ready for compilation. Now run './configure; make' to build."

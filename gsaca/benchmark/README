@@ -1,0 +1,73 @@
+This directory contains several suffix array construction algorithms (SACAs),
+as well as programs, benchmarks and links to test data for comparing them.
+
+**** PROGRAMS *****************************************************************
+A little program named constructsa is included, being able to construct
+the suffix array of a given text or file. To compile the program, call
+`make constructsa` within this directory. Sample usage would be
+`./constructsa.x mytext`, which will print the suffix array for 'mytext' in
+human readable format. For more information about usage, just execute
+the program without any parameters, a usage message will be printed.
+
+**** BENCHMARKS ***************************************************************
+The directory contains a benchmark program, as well as a script for
+benchmarking a whole text collection inside the `data` directory.
+To create both of them, just call `make benchmark`.
+
+BENCHMARK PROGRAM
+The benchmark program, after compiling, will be `benchmark.x`, within
+this directory. For usage information, call `./benchmark.x` without
+any parameter, a message will be displayed. The benchmark program will
+measure times needed to construct suffix array using different SACAs 
+(see SACAs), and, if PERF is installed (see REQUIREMENTS), will also
+measure cache miss rates that occured during suffix array construction.
+
+BENCHMARK SCRIPT
+After calling `make benchmark`, this directory should contain a script
+named `corpusbenchmark.sh`. The script expects the name of a test data 
+directory (see TEST DATA), and handles multiple tasks:
+- if the test files of the data are not present yet, they will be downloaded
+- the benchmark program will be executed with all files contained in the 
+  selected test data folder
+- results will be written to `results` - directory, into a file with same
+  name as the test data folder, ending with file suffix `.dat`. All results
+  are average results of 10 runs
+An example usage could be
+`./corpusbenchmark.sh largecorpus`
+
+MEASUREMENTS
+The benchmark measures file sizes in bytes, times in milliseconds
+ and cache misses as a ratio.
+
+**** SACAs ********************************************************************
+Five SACAs are included:
+- divsufsort (DSS):	https://github.com/y-256/libdivsufsort
+- SAIS:			https://sites.google.com/site/yuta256/sais
+- DC3:			http://people.mpi-inf.mpg.de/~sanders/programs/suffix/
+- KA:			https://sites.google.com/site/yuta256/KA.tar.bz2
+- GSACA:		https://github.com/waYne1337/gsaca
+All links were last visited on January 2016.
+
+**** TEST DATA ****************************************************************
+The test data is organized as subdirectories of the directory `data`.
+Each directory contains a Makefile, which allows to download the data set
+of a text corpus directly.
+Currently, test data contains a text collection of
+- largecorpus:		http://www.data-compression.info/Corpora/CanterburyCorpus/
+- silesiacorpus:	http://sun.aei.polsl.pl/~sdeor/index.php?page=silesia
+- pizzachili:		http://pizzachili.dcc.uchile.cl/texts.html
+- repcorpus:		http://pizzachili.dcc.uchile.cl/repcorpus.html
+All corpus were last visited on January 2016.
+
+**** REQUIREMENTS *************************************************************
+The following programs are required to compile the programs:
+- GCC 4.8.1 or higher
+
+The following programs are required for additional functionalities of programs:
+- PERF 2.6.32 or higher (for measuring cache miss rates on benchmark)
+
+The following programs are required for downloading test data:
+- CURL
+- gzip
+- bzip2
+- zip

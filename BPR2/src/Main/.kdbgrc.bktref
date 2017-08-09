@@ -1,0 +1,40 @@
+[Breakpoint 0]
+Enabled=true
+File=bktref.main.c
+Line=84
+Temporary=false
+
+[Breakpoint 1]
+Enabled=true
+File=bktref.main.c
+Line=87
+Temporary=false
+
+[Breakpoint 2]
+Enabled=true
+File=kbs_SuffixArrayChecker.c
+Line=26
+Temporary=false
+
+[Breakpoint 3]
+Enabled=true
+File=kbs_SuffixArrayChecker.c
+Line=44
+Temporary=false
+
+[Breakpoint 4]
+Enabled=true
+File=kbs_SuffixArrayChecker.c
+Line=71
+Temporary=false
+
+[General]
+DebuggerCmdStr=
+FileVersion=1
+ProgramArgs=-d=2 test2
+TTYLevel=7
+WorkingDirectory=/home/klaus/Development/auto/data/
+
+[Memory]
+ColumnWidths=80,0
+NumExprs=0

@@ -1,0 +1,10 @@
+*.o
+Makefile
+*.*~
+*~
+*.lo
+*.la
+*.libs
+src/Main/bprtime
+src/Main/fibstring
+src/Main/periodicstr

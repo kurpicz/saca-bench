@@ -1,0 +1,61 @@
+Release notes for bpr2 (bucket-pointer refinement,  version 2.0.0)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Copyright (C) 2005 Klaus-Bernd Schürmann
+
+  This program is free software; you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation; either version 2 of the License, or
+  (at your option) any later version.
+
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program; if not, write to the Free Software
+  Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+
+
+This package contains the implementation of the bucket-pointer refinement algorithm version 2.0.0 (bpr2)
+to construct suffix arrays ('./src/SuffixArray/kbs_SuffixArrayConstDStepAndPre.c' resp.
+'./src/SuffixArray/kbs_SuffixArrayConstDStepAndPreNumbers.c').
+
+This is a faster enhanced implementation of the algorithm described in the paper:
+Klaus-Bernd Schürmann and Jens Stoye
+An Incomplex Algorithm for Fast Suffix Array Construction
+'Proceedings of the 7th Workshop on Algorithm Engineering and Experiments
+and the 2nd Workshop on Analytic Algorithmics and Combinatorics ({ALENEX}/{ANALCO} 2005)'.
+The current algorithm is presented in my PhD thesis.
+
+
+The programs of this package are
+	1. bprtime     - timing for the bpr algorithm
+	2. fibstring   - generation of fibonacci string of certain length
+	3. periodicstr - generation of periodic string with certain alphabet size, period length, and string length
+
+
+To install the programs execute
+	./bootstrap.sh
+	./configure CC=<compiler-command> CFLAGS="<compiler-options>" bindir=<directory-to-install-binaries>
+	make
+	make install
+
+The default options for ./configure are CC=gcc, CFLAGS="-O3 -fomit-frame-pointer -funroll-loops -fprefetch-loop-arrays -W -Winline -Wall", 
+and the default bindir of the system.
+
+The program is executed by: bprtime -q=<size of prefixes to which respect the suffixes are initially sorted> <File of Input String>,
+where the -q Option can be omitted.
+
+
+To see more documentation of the source code, execute
+	doxygen doxyBpr.cfg
+The documentation of the source code will be located in the directory ./docs
+
+For more details on how to deal with automake read the file 'INSTALL'
+
+The software in this archive should be considered an ALPHA version. I will be
+glad to receive your comments and bug reports.
+
+Klaus-Bernd Schürmann
+(Klaus-Bernd.Schuermann@CeBiTec.Uni-Bielefeld.DE)
