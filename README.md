@@ -15,6 +15,6 @@ This repository contains the following C/C++ implementations of suffix array con
 | [sais-lite](sais-lite) | - | Y. Mori | 2010 | MIT |
 
 Please note that all those files are licensed under their respective license (if available).
-I merely colletcted them to create a benchmark.
+I merely collected them to create a benchmark.
 
 If you know of any other *publicly* available SACA please send me a [mail](mailto:florian.kurpicz@tu-dortmund.de).
