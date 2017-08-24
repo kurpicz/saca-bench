@@ -13,6 +13,8 @@ This repository contains the following C/C++ implementations of suffix array con
 | [sa-is](sa-is) | [Two Efficient Algorithms for Linear Time Suffix Array Construction](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/ge-nong/Two%20Efficient%20Algorithms%20for%20Linear%20Time%20Suffix%20Array%20Construction.pdf) | G. Nong | 2011 | n/a |
 | [SACA-K](saca-k) |[Practical Linear-Time O(1)-Workspace Suffix Sorting for Constant Alphabets](https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/ge-nong/saca-k-tois.pdf)|G. Nong|2011/13| n/a |
 | [sais-lite](sais-lite) | - | Y. Mori | 2010 | MIT |
+| [gsa-is](gsa-is) | [Inducing Enhanced Suffix Arrays for String Collections](http://www.sciencedirect.com/science/article/pii/S0304397517302621) | F. A. Louza, S. Gog and G. P. Telles | 2017 | MIT |
+
 
 Please note that all those files are licensed under their respective license (if available).
 I merely collected them to create a benchmark.

@@ -1,0 +1,18 @@
+//donwload pizzachili small-dataset
+wget http://pizzachili.dcc.uchile.cl/texts/xml/dblp.xml.50MB.gz
+wget http://pizzachili.dcc.uchile.cl/texts/dna/dna.50MB.gz
+wget http://pizzachili.dcc.uchile.cl/repcorpus/real/einstein.de.txt.gz
+wget http://pizzachili.dcc.uchile.cl/texts/nlang/english.50MB.gz
+wget http://pizzachili.dcc.uchile.cl/repcorpus/artificial/fib41.gz
+wget http://pizzachili.dcc.uchile.cl/repcorpus/real/kernel.gz
+wget http://pizzachili.dcc.uchile.cl/texts/protein/proteins.50MB.gz
+wget http://pizzachili.dcc.uchile.cl/texts/code/sources.50MB.gz
+
+//extract
+mkdir pizza
+mv *.gz pizza
+cd pizza
+gunzip *.gz
+
+//add .txt to extension
+for i in *; do mv $i $i.txt; done
