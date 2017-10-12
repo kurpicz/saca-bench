@@ -1,0 +1,41 @@
+Import('env', 'install_dir')
+
+
+target_name = 'msufsort'
+target_build_number = '4.0a'
+
+
+#===============================================================================
+# target specific settings (appended to env default settings)
+#===============================================================================
+
+target_specific_lib_dependencies = []
+target_specific_lib_dependency_paths = []
+target_specific_include_paths = []
+target_specific_compiler_flags = []
+target_specific_linker_flags = []
+target_specific_configurations = []
+
+
+#===============================================================================
+# target's source files
+#===============================================================================
+
+target_source_files = ['./msufsort.cpp']
+
+
+#===============================================================================
+# build target and install
+#===============================================================================
+
+target_env = env.Clone()
+target_env.Append(LIBS = target_specific_lib_dependencies)
+target_env.Append(LIBPATH = target_specific_lib_dependency_paths)
+target_env.Append(LIBFLAGS = target_specific_linker_flags)
+target_env.Append(CPPPATH = target_specific_include_paths)
+target_env.Append(CPPDEFINES = {'BUILD_NUM' : target_build_number})
+target_env.Append(CPPFLAGS = target_specific_compiler_flags)
+for configuration in target_specific_configurations:
+    target_env.ParseConfig(configuration)
+target_object = target_env.Library(target_name, target_source_files)
+target_env.Install(install_dir, target_object)

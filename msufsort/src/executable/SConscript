@@ -1,0 +1,17 @@
+Import('env', 'install_dir')
+
+
+#===============================================================================
+# list of subdirectories to build
+#===============================================================================
+
+sub_directories = ['msufsort']
+
+
+#===============================================================================
+# invoke SConscript on each subdirectory
+#===============================================================================
+
+for directory_name in sub_directories:
+    env.SConscript('%s/SConscript' % directory_name, {'env' : env, 'install_dir' : install_dir + '/bin/'})
+
