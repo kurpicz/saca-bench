@@ -1,7 +1,7 @@
 # SACA Benchmark
 This repository contains the following C/C++ implementations of suffix array construction algorithms (SACAs).
 
-**There now exists the project [*SACABench*](https://github.com/sacabench) that contains most of these algorithms and allows to easliy *build*, *run*, and *benchmark* them.**
+**There now exists the project [*SACABench*](https://github.com/sacabench/sacabench) that contains most of these algorithms and allows to easliy *build*, *run*, and *benchmark* them.**
 
 | Name          | Publication   | Author(s) | Year | License |
 | ------------- | ------------- | --------- | :--: | :-----: |
